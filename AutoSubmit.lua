@@ -327,12 +327,16 @@ while pp<=ded do
 	PlayStrategy()
 	Back2Index()
 	closeApp("jp.co.mixi.monsterstrikeCN")
+	mSleep(2000)
 	file_createDic("/sdcard/Pictures/1/1 ("..pp..")")
+	mSleep(1000)
 	data10=readFileString("/data/data/jp.co.mixi.monsterstrikeCN/data10.bin")
+	mSleep(1000)
+	if data10==false then dialog("fail",0) end
 	if isFileExist("/sdcard/Pictures/1/1 ("..pp..")/data10.bin")==false then
-		writeFileString("/sdcard/Pictures/1/1 ("..pp..")/data10.bin",data10,"a")
+		writeFileString("/sdcard/Pictures/1/1 ("..pp..")/data10.bin",data10,"w")
 	end
-	mSleep(3000)
+	mSleep(1000)
 	pp=pp+1
 end
 
